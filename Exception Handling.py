@@ -160,3 +160,67 @@ else:
 
 finally:
     print("Program Finished")
+    ---------------------------------------------------------------------------------------------
+    #RAISE
+#raise → intentionally create an exception
+But sometimes you want to tell Python that something is invalid yourself.
+That's when we use raise.
+
+def ask_chatbot(question):
+    if question == "":
+        raise ValueError("Question cannot be empty")
+    return "Question"
+
+
+try:
+    question = "What is RAG"
+    result = ask_chatbot(question)
+    print(result)
+
+except ValueError as e:
+    print(e)
+
+#FLOW
+Function
+   ↓
+Validate input
+   ↓
+raise error if invalid
+   ↓
+try calls function
+   ↓
+except handles the error
+
+#IMP
+#raise stops the current function and sends the exception to the nearest matching except.
+def ask_chatbot(question):
+    if question == "":
+        raise ValueError("question cannot be empty")
+
+    return question
+
+
+try:
+    question = "What is LLM?"
+    result = ask_chatbot(question)
+    print(result)
+
+except ValueError as e:
+    print(e)
+-------------------------------------------------------------------------------------------------
+#EXCERCISE
+def retrieve_document(query):
+
+    if query == "":
+        raise ValueError("Query cannot be empty")
+ #Create/throw an error.
+    return "Retrieving documents for your query"
+
+
+try:
+    query = ""#Store a value.
+    result = retrieve_document(query) #CALLING THE QUERY
+    print(result)
+
+except ValueError as e:
+    print(e)#Catch/handle that error.
