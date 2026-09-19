@@ -217,7 +217,7 @@ def retrieve_document(query):
     return "Retrieving documents for your query"
 
 
-try:
+try:         #try and except must be outside the funtion
     query = ""#Store a value.
     result = retrieve_document(query) #CALLING THE QUERY
     print(result)
