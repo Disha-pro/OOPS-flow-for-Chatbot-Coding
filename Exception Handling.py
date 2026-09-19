@@ -220,6 +220,16 @@ def retrieve_document(query):
 try:         #try and except must be outside the funtion
     query = ""#Store a value.
     result = retrieve_document(query) #CALLING THE QUERY
+
+validate input
+      ↓
+raise if invalid
+      ↓
+function returns result
+      ↓
+try calls function
+      ↓
+except handles error
     print(result)
 
 except ValueError as e:
